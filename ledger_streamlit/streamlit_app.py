@@ -1253,5 +1253,4 @@ def show_system_admin(user):
         with col4:
             st.metric("System Health", "✅ Good")
 
-if __name__=="__main__":
-    main()
+main()
