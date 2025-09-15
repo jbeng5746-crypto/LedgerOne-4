@@ -1,0 +1,4 @@
+employee_id,full_name,email,national_id,kra_pin,basic_salary,house_allowance,transport_allowance,bank_account
+E001,John Kamau,j.kamau@company.com,12345678,A051234567P,80000,20000,10000,1234567890
+E002,Mary Wanjiku,m.wanjiku@company.com,12345679,A051234568Q,75000,18000,8000,1234567891
+E003,Peter Ochieng,p.ochieng@company.com,12345680,A051234569R,65000,15000,7000,1234567892

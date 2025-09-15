@@ -1,0 +1,40 @@
+modules = ["python-3.11"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["cairo", "ffmpeg-full", "freetype", "ghostscript", "glibcLocales", "gobject-introspection", "gtk3", "lcms2", "libimagequant", "libjpeg", "libtiff", "libwebp", "libxcrypt", "openjpeg", "pkg-config", "poppler", "poppler_utils", "qhull", "tcl", "tesseract", "tk", "zlib"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "LedgerApp"
+
+[[workflows.workflow]]
+name = "LedgerApp"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd ledger_streamlit && /home/runner/workspace/.pythonlibs/bin/streamlit run streamlit_app.py --server.address 0.0.0.0 --server.port 5000"
+waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["streamlit", "run", "ledger_streamlit/streamlit_app.py", "--server.port", "5000", "--server.address"]
+build = ["pip", "install", "-r", "requirements.txt"]

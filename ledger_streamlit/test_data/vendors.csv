@@ -1,0 +1,4 @@
+vendor_code,vendor_name,kra_pin,email,phone,payment_terms,credit_limit,tax_status
+V001,Acme Supplies Ltd,P051234567M,orders@acme.co.ke,+254700123456,30,500000,vat_registered
+V002,Best Parts Kenya,P051234568N,sales@bestparts.co.ke,+254700123457,15,250000,vat_registered
+V003,Quick Services,P051234569O,info@quickservices.co.ke,+254700123458,7,100000,vat_exempt
